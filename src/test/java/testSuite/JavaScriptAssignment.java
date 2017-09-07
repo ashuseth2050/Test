@@ -157,7 +157,7 @@ public class JavaScriptAssignment {
 			ChromeDriverService service = new ChromeDriverService.Builder()
 					.usingDriverExecutable(new File("/usr/lib/chromium-browser/chromedriver"))
 					.usingAnyFreePort()
-					.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
+					//.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
 					.build();
 			service.start();
 			//then start driver, with URL mapped to above-started service URL
