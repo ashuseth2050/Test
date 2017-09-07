@@ -163,7 +163,7 @@ public class JavaScriptAssignment {
 			//then start driver, with URL mapped to above-started service URL
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("–start-maximized");
+		//	options.addArguments("–start-maximized");
 			dc.setCapability(ChromeOptions.CAPABILITY,options);
 			driver = new RemoteWebDriver(service.getUrl(), dc);
 			driver.get("http://localhost:3000/");
