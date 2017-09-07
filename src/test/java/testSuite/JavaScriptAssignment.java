@@ -1150,6 +1150,8 @@ public class JavaScriptAssignment {
 	public void finish()
 	{
 		extent.flush();
+		driver.quit();
+		System.out.println("Happy Testing.");
 
 	}
 
