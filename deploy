@@ -1,6 +1,6 @@
 #!/bin/sh      
 ssh ubuntu@35.154.243.106 <<EOF        
- cd /home/ubuntu/Assesment_test/Report  
+ cd /home/ubuntu/Assesment_test  
  git pull origin master       
  exit       
 EOF
