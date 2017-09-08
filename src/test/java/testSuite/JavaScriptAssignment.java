@@ -131,7 +131,7 @@ public class JavaScriptAssignment {
 	@BeforeSuite()
 	public void setup() throws IOException
 	{
-		htmlReporter = new ExtentHtmlReporter("./Report/Associate Report.html");
+		htmlReporter = new ExtentHtmlReporter("./Report/TestReport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("SBA", "jQuery - Insurance - Solution Kit");
@@ -603,7 +603,7 @@ public class JavaScriptAssignment {
 			skill3.add("TS15");
 
 		} catch (AssertionError| Exception e) {
-			e.printStackTrace();
+			////e.printStackTrace();
 			specTest.log(Status.FAIL, "<b>TS15:</b>"
 					+ "<br/>User can drop exactly 1 policy in box 2. Validation is proper, no more than 1 policy can be dropped in box 2."
 					+ "<br/><b>Score:</b>"
@@ -636,7 +636,7 @@ public class JavaScriptAssignment {
 			skill3.add("TS16");
 
 		} catch (AssertionError| Exception e) {
-			e.printStackTrace();
+			////e.printStackTrace();
 			specTest.log(Status.FAIL, "<b>TS16:</b>"
 					+ "<br/>User clicks on buy insurance button and box 2 does not contain any policy, proper error message is displayed."
 					+ "<br/><b>Score:</b>"
@@ -702,7 +702,7 @@ public class JavaScriptAssignment {
 					+ "<br/><b>Score:</b>"
 					+ "<br/>0/6"+"");
 			ts21=0;					
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 
 
