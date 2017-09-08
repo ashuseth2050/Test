@@ -131,7 +131,7 @@ public class JavaScriptAssignment {
 	@BeforeSuite()
 	public void setup() throws IOException
 	{
-		htmlReporter = new ExtentHtmlReporter("./Report/Associate Report.html");
+		htmlReporter = new ExtentHtmlReporter("./Report/Associate_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("SBA", "jQuery - Insurance - Solution Kit");
