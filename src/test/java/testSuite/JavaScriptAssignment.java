@@ -175,7 +175,7 @@ public class JavaScriptAssignment {
 		testName = method.getName();       
 	}
 
-	@Test
+	
 	public void report()
 	{
 		//Creating Application Quality Test
@@ -190,6 +190,7 @@ public class JavaScriptAssignment {
 	@Test(priority=1)
 	public void specification() throws InterruptedException
 	{
+		report();
 
 		//TS01
 		try {
