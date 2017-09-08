@@ -131,7 +131,7 @@ public class JavaScriptAssignment {
 	@BeforeSuite()
 	public void setup() throws IOException
 	{
-		htmlReporter = new ExtentHtmlReporter("./Report/Associate_Report.html");
+		htmlReporter = new ExtentHtmlReporter("/Report/Associate_Report.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("SBA", "jQuery - Insurance - Solution Kit");
@@ -157,13 +157,13 @@ public class JavaScriptAssignment {
 			ChromeDriverService service = new ChromeDriverService.Builder()
 					.usingDriverExecutable(new File("/usr/lib/chromium-browser/chromedriver"))
 					.usingAnyFreePort()
-					.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
+					//.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
 					.build();
 			service.start();
 			//then start driver, with URL mapped to above-started service URL
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-			options.addArguments("–start-maximized");
+			//options.addArguments("–start-maximized");
 			dc.setCapability(ChromeOptions.CAPABILITY,options);
 			driver = new RemoteWebDriver(service.getUrl(), dc);
 			driver.get("http://localhost:3000/");
@@ -175,7 +175,7 @@ public class JavaScriptAssignment {
 			testName = method.getName();       
 		}
 
-		@Test
+		
 		public void report()
 		{
 			//Creating Application Quality Test
@@ -190,7 +190,7 @@ public class JavaScriptAssignment {
 		@Test(priority=1)
 		public void specification() throws InterruptedException
 		{
-
+			report();
 			//TS01
 			try {
 				specTest = appQuality.createNode("<b>Specification</b>");
@@ -1119,29 +1119,29 @@ public class JavaScriptAssignment {
 
 		}
 
-		@Test(priority=2 ,dataProvider = "deviceName")
-		public void mobileEmulation(String deviceName, String deviceNameWhatIsMyBrowser) throws IOException{
-			//For Responsiveness
-			Map<String, String> mobileEmulation = new HashMap<String, String>();
-			mobileEmulation.put("deviceName", deviceName);
-			Map<String, Object> chromeOptions = new HashMap<String, Object>();
-			chromeOptions.put("mobileEmulation", mobileEmulation);
-			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-			capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-			driver = new ChromeDriver(capabilities);
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			System.out.println(deviceName);
-			driver.get("http:localhost:3000");
-			respTest.pass(""+deviceName+"+",MediaEntityBuilder.createScreenCaptureFromPath(captureScreenMethod(dest)).build());
-			driver.quit();
-		}
+//		@Test(priority=2 ,dataProvider = "deviceName")
+//		public void mobileEmulation(String deviceName, String deviceNameWhatIsMyBrowser) throws IOException{
+//			//For Responsiveness
+//			Map<String, String> mobileEmulation = new HashMap<String, String>();
+//			mobileEmulation.put("deviceName", deviceName);
+//			Map<String, Object> chromeOptions = new HashMap<String, Object>();
+//			chromeOptions.put("mobileEmulation", mobileEmulation);
+//			DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+//			capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+//			System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+//			driver = new ChromeDriver(capabilities);
+//			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+//			System.out.println(deviceName);
+//			driver.get("http:localhost:3000");
+//			respTest.pass(""+deviceName+"+",MediaEntityBuilder.createScreenCaptureFromPath(captureScreenMethod(dest)).build());
+//			driver.quit();
+//		}
 
 		@AfterClass
 		public void finish()
 		{
 			extent.flush();
-
+            System.out.println("Happy Testing");
 		}
 
 	}
