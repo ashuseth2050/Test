@@ -163,7 +163,7 @@ public class JavaScriptAssignment {
 			//then start driver, with URL mapped to above-started service URL
 			DesiredCapabilities dc = DesiredCapabilities.chrome();
 			ChromeOptions options = new ChromeOptions();
-		//	options.addArguments("�start-maximized");
+			//	options.addArguments("�start-maximized");
 			dc.setCapability(ChromeOptions.CAPABILITY,options);
 			driver = new RemoteWebDriver(service.getUrl(), dc);
 			driver.get("http://localhost:3000/");
@@ -175,7 +175,7 @@ public class JavaScriptAssignment {
 		testName = method.getName();       
 	}
 
-	
+
 	public void report()
 	{
 		//Creating Application Quality Test
@@ -1096,7 +1096,6 @@ public class JavaScriptAssignment {
 
 		//Final Matrix
 		appQuality.log(Status.PASS, "<table border=\"1\"> <tr> <td><b>Specification</b></td> <td>"+specperc+" %</td> </tr> <tr> <td><b>API Accuracy</></td> <td>"+apiperc+" %</td> </tr> "
-				+ "<tr> <td><b>Responsiveness</b></td> <td>100 %</td> </tr>"
 				+ "<tr> <td><b>Skill Check</b></td> <td>"+totalperc+" %</td> </tr></table>");
 
 		//respTest=appQuality.createNode("<b>Responsiveness</b>");
@@ -1107,45 +1106,45 @@ public class JavaScriptAssignment {
 
 	}
 
-//	//TS05
-//	@DataProvider(name = "deviceName")
-//	public Object[][] deviceNames(){
-//		return new Object[][] {
-//			{"Nexus 7", "iPad"},
-//			{"iPad Pro", "iPhone 6"},
-//			{"iPhone 6", "iPad"},
-//			{"iPad", "iPhone 6"},
-//
-//		};
-//
-//	}
-//
-//	@Test(priority=2 ,dataProvider = "deviceName")
-//	public void mobileEmulation(String deviceName, String deviceNameWhatIsMyBrowser) throws IOException{
-//		//For Responsiveness
-//		ChromeDriverService service = new ChromeDriverService.Builder()
-//				.usingDriverExecutable(new File("/usr/lib/chromium-browser/chromedriver"))
-//				.usingAnyFreePort()
-//				.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
-//				.build();
-//		service.start();
-//		Map<String, String> mobileEmulation = new HashMap<String, String>();
-//		mobileEmulation.put("deviceName", deviceName);
-//		Map<String, Object> chromeOptions = new HashMap<String, Object>();
-//		chromeOptions.put("mobileEmulation", mobileEmulation);
-//		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-//		ChromeOptions options = new ChromeOptions();
-//		options.addArguments("�start-maximized");
-//		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-//		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-//		//System.setProperty("webdriver.chrome.driver","chromedriver.exe");
-//		driver = new RemoteWebDriver(service.getUrl(),capabilities);
-//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-//		System.out.println(deviceName);
-//		driver.get("http:localhost:3000");
-//		respTest.pass(""+deviceName+"+",MediaEntityBuilder.createScreenCaptureFromPath(captureScreenMethod(dest)).build());
-//		driver.quit();
-//	}
+	//	//TS05
+	//	@DataProvider(name = "deviceName")
+	//	public Object[][] deviceNames(){
+	//		return new Object[][] {
+	//			{"Nexus 7", "iPad"},
+	//			{"iPad Pro", "iPhone 6"},
+	//			{"iPhone 6", "iPad"},
+	//			{"iPad", "iPhone 6"},
+	//
+	//		};
+	//
+	//	}
+	//
+	//	@Test(priority=2 ,dataProvider = "deviceName")
+	//	public void mobileEmulation(String deviceName, String deviceNameWhatIsMyBrowser) throws IOException{
+	//		//For Responsiveness
+	//		ChromeDriverService service = new ChromeDriverService.Builder()
+	//				.usingDriverExecutable(new File("/usr/lib/chromium-browser/chromedriver"))
+	//				.usingAnyFreePort()
+	//				.withEnvironment(ImmutableMap.of("DISPLAY",":10"))
+	//				.build();
+	//		service.start();
+	//		Map<String, String> mobileEmulation = new HashMap<String, String>();
+	//		mobileEmulation.put("deviceName", deviceName);
+	//		Map<String, Object> chromeOptions = new HashMap<String, Object>();
+	//		chromeOptions.put("mobileEmulation", mobileEmulation);
+	//		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+	//		ChromeOptions options = new ChromeOptions();
+	//		options.addArguments("�start-maximized");
+	//		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+	//		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+	//		//System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+	//		driver = new RemoteWebDriver(service.getUrl(),capabilities);
+	//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+	//		System.out.println(deviceName);
+	//		driver.get("http:localhost:3000");
+	//		respTest.pass(""+deviceName+"+",MediaEntityBuilder.createScreenCaptureFromPath(captureScreenMethod(dest)).build());
+	//		driver.quit();
+	//	}
 
 	@AfterClass
 	public void finish()
