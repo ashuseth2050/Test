@@ -1,2 +1,7 @@
-#!/bin/sh      
+#!/bin/sh
+ssh ubuntu@35.154.243.106 <<EOF        
+ cd /home/ubuntu/Assesment_test
+ rm TestReport.html       
+ exit       
+EOF      
 scp TestReport.html ubuntu@35.154.243.106:~/Assesment_test
